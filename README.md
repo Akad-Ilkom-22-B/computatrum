@@ -15,4 +15,4 @@ Didalam Profil Mahasiswa terdapat informasi mengenai foto diri, nim, nama mahasi
 
 ## Link Figma
 
-Untuk melihat desain nya [https://www.figma.com/file/0qXRKjuM9UOWmMxvWTgh4u/sistem-informasi?type=design&node-id=0%3A1&mode=design&t=BGqsV7bvk7kiHgNt-1](klik)
+Untuk melihat desain nya [klik](https://www.figma.com/file/0qXRKjuM9UOWmMxvWTgh4u/sistem-informasi?type=design&node-id=0%3A1&mode=design&t=BGqsV7bvk7kiHgNt-1)
