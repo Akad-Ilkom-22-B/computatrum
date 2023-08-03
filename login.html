@@ -7,18 +7,25 @@
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <h2 class="welcome">WELCOME</h2>
-    <div>
-      <form action="" class="table">
-        <input type="text" placeholder="Masukkan username anda" />
-      </form>
-      <form action="" class="table">
-        <input type="text" placeholder="Masukkan password anda" />
-      </form>
-      <form action="" class="table">
-        <input type="text" placeholder="Login sebagai" />
-      </form>
-      <button class="table">Login</button>
+    <div class="container">
+      <div class="welcome">
+        <h1>W E L C O M E</h1>
+      </div>
+      <div class="forum">
+        <form action="" class="table">
+          <input type="text" placeholder="Masukkan username anda" />
+          <input type="text" placeholder="Masukkan password anda" />
+          <select name="akses" id="akses">
+            <option value="" hidden>Login Sebagai</option>
+            <option value="Admin">Admin</option>
+            <option value="Mahasiswa Baru">Mahasiswa Baru</option>
+            <option value="Mahasiswa">Mahasiswa</option>
+            <option value="Mahasiswa Tamu">Mahasiswa Tamu</option>
+            <option value="Dosen">Dosen</option>
+          </select>
+          <button class="table">Login</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
