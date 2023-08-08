@@ -20,3 +20,30 @@ Untuk melihat desain nya [klik](https://www.figma.com/file/0qXRKjuM9UOWmMxvWTgh4
 ## Referensi Website
 
 [AKAD UNIMED](https://devakad.unimed.ac.id/)
+
+## Database
+
+**Tabel "login":**
+
+| Column Name | Data Type    | Constraints                 |
+| ----------- | ------------ | --------------------------- |
+| id          | INT          | Primary Key, Auto-increment |
+| username    | VARCHAR(50)  | Unique, Not Null            |
+| password    | VARCHAR(255) | Not Null                    |
+| akses       | VARCHAR(20)  | Not Null                    |
+
+**Tabel "mahasiswa":**
+
+| Column Name    | Data Type     | Constraints                 |
+| -------------- | ------------- | --------------------------- |
+| id             | INT           | Primary Key, Auto-increment |
+| nim            | VARCHAR(10)   | Unique, Not Null            |
+| nama           | VARCHAR(100)  | Not Null                    |
+| jurusan        | VARCHAR(50)   | Not Null                    |
+| program_studi  | VARCHAR(50)   | Not Null                    |
+| angkatan       | INT           | Not Null                    |
+| jenis_kelamin  | VARCHAR(15)   | Not Null                    |
+| tahun_akademik | VARCHAR(20)   | Not Null                    |
+| semester       | INT           | Not Null                    |
+| ipk            | DECIMAL(3, 2) | Not Null                    |
+| sks            | INT           | Not Null                    |
