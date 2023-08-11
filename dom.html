@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript DOM</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="username">Username : </label>
+      <input type="text" id="username" name="username" required /><br /><br />
+      <label for="password">Password : </label>
+      <input type="text" id="password" name="password" required />
+      <button type="button" id="tombol">Login</button>
+    </form>
+
+    <p id="pesan"></p>
+
+    <script>
+      const login_button = document.getElementById("tombol");
+      const pesan = document.getElementById("pesan");
+
+      login_button.addEventListener("click", function () {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        const username1 = "rona";
+        const password1 = "heppyria";
+
+        if (username === username1 && password === password1) {
+          pesan.textContent = "Selamat Datang";
+          pesan.style.color = "green";
+        } else {
+          pesan.textContent = "Gagal Login";
+          pesan.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
