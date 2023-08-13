@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header-section {
+  position: fixed;
+  width: 100%;
+  border: 1px solid black;
+  background-color: #282f3a;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-kanan {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.nav-kanan p {
+  color: white;
+  margin: 0 10px;
+}
+
+.logo img {
+  height: 34px;
+  margin: 0 10px;
+}
+
+.name p {
+  color: white;
+  margin: 0 10px;
+}
+
+.logo-profil img {
+  height: 34px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.nav-section {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 235px;
+  height: 100vh;
+  background-color: #232227;
+}
+
+.main-section {
+  padding-left: 265px;
+  padding-top: 70px;
+}
+
+.contain img {
+  width: 168px;
+  height: 220px;
+}
