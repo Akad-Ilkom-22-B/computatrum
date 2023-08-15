@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Syne+Tactile&display=swap");
 body {
   margin: 0;
   padding: 0;
+  background-color: rgb(226, 247, 247);
 }
 
 .header-section {
@@ -58,4 +60,20 @@ body {
 .contain img {
   width: 168px;
   height: 220px;
+  border: 1px solid #bfbfbf;
+
+  border-radius: 4px;
+  padding: 10px;
+  width: 150px;
+}
+.header {
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  color: #bfbfbf;
+  font-size: 20px;
 }
