@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+
+.registrasi {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.login {
+  width: 500px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+.mahasiswa {
+  width: 500px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+.tombol {
+  margin: 20px auto;
+}
