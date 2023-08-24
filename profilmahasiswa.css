@@ -98,19 +98,20 @@ h6 {
   gap: 200px;
 }
 .contain img {
-  width: 200px;
-  height: 280px;
-  border: 1px solid #bfbfbf;
-  border-radius: 2px;
-  background-color: white;
+  display: flex;
+  width: 150px;
+  height: 230px;
+  align-items: flex-start;
   padding: 10px;
-  margin: 0;
+  margin-top: 97px;
+  margin-right: 450px;
 }
 .card {
   font-family: "Poppins", sans-serif;
   border: 1px solid #bfbfbf;
   border-radius: 2px;
-  text-align: center;
+
+  justify-content: flex-end;
   background-color: white; /* Menambahkan background putih */
   padding: 20px; /* Menambahkan padding untuk memberi ruang antara border dan konten */
   box-sizing: border-box; /* Memastikan padding tidak mempengaruhi lebar elemen */
@@ -119,6 +120,6 @@ h6 {
   justify-content: center;
   margin: 22px 0;
 
-  width: 300px; /* Atur lebar elemen */
-  height: 250px; /* Atur tinggi elemen */
+  width: 700px; /* Atur lebar elemen */
+  height: 295px; /* Atur tinggi elemen */
 }
