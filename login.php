@@ -12,7 +12,7 @@
         <h1>W E L C O M E</h1>
       </div>
       <div class="forum">
-        <form action="" class="table" method = "post">
+        <form action="cek_login.php" class="table" method = "post">
           <input type="text" name ="username" placeholder="Masukkan username anda" />
           <input type="password" name ="password" placeholder="Masukkan password anda" />
           <select name="akses" id="akses">
@@ -29,42 +29,3 @@
     </div>
   </body>
 </html>
-
-<?php
-session_start();
-
-include "koneksi.php";
-
-
-$username = $_POST["username"];
-$password = $_POST["password"];
-$akses = $_POST["akses"];
-
-if(isset($_POST['masuk'])){
-
-    $query = mysqli_query($koneksi, "SELECT * FROM login WHERE username = '$username' AND password = '$password'");
-    $data = mysqli_fetch_assoc($query);
-    $countdata = mysqli_num_rows($query);
-
-    if($countdata > 0){
-
-      $_SESSION['id'] = $data['id'];
-      $_SESSION['username'] = $data['username'];
-      $_SESSION['password'] = $data['password'];
-      $_SESSION['akses'] = $data['akses'];
-
-      if ($_SESSION['akses'] == 'Admin') {
-        header("Location: admin.php");
-      }
-
-      elseif($_SESSION['akses'] == 'Mahasiswa'){
-        header("Location: beranda.php");
-      }
-      
-    }
-
-    else{
-        echo 'Gagal Login';
-    }
-  }
-?>

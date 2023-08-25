@@ -1,3 +1,15 @@
+<?php
+session_start();
+ob_start();
+
+include '../db/koneksi.php';
+
+if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
+    echo "Anda harus login terlebih dahulu!";
+    echo "<a href='../login.php'>Login</a>";
+} else {
+    define('INDEX', true);
+?>
 
 
 <!DOCTYPE html>
@@ -116,7 +128,7 @@
     </table>
 </form>
 </div>
-<a href="logout.php">logout</a>
+<a href="../logout.php">logout</a>
 </div>
 </body>
 </html>
@@ -125,7 +137,7 @@
 
 session_start();
 
-include 'koneksi.php';
+include '../db/koneksi.php';
 
 $username = isset($_POST['username']) ? $_POST['username'] : '';
 $Password = isset($_POST['pass']) ? $_POST['pass'] : '';
@@ -170,4 +182,8 @@ if(isset($_POST['simpan'])){
     }
 }
 
+?>
+
+<?php
+}
 ?>
