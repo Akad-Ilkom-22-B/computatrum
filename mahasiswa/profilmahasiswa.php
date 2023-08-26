@@ -21,6 +21,13 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   </head>
   <body>
+
+  <?php
+        $id_user = $_SESSION['id'];
+        $query = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE id='$id_user'");
+        $data = mysqli_fetch_array($query);
+        ?>
+
     <div class="container">
       <div class="header-section">
         <div class="nav-kanan">
@@ -32,7 +39,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
               <i class="fa fa-bell" aria-hidden="true"></i>
             </a>
           </div>
-          <div class="name-profil"><p>JUNG JAEHYUN</p></div>
+          <div class="name-profil"><p><?php echo $data['nama'] ?></p></div>
         </div>
       </div>
 
@@ -149,27 +156,27 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
                 <tbody>
                   <tr>
                     <th>Nim</th>
-                    <td>422734628</td>
+                    <td><?php echo $data['nim'] ?></td>
                   </tr>
                   <tr>
                     <th>Nama Mahasiswa</th>
-                    <td>Jung JAEHYUN</td>
+                    <td><?php echo $data['nama'] ?></td>
                   </tr>
                   <tr>
                     <th>Jurusan</th>
-                    <td>Matematika</td>
+                    <td><?php echo $data['jurusan'] ?></td>
                   </tr>
                   <tr>
                     <th>Program Studi</th>
-                    <td>Ilmu Komputer (S1)</td>
+                    <td><?php echo $data['program_studi'] ?></td>
                   </tr>
                   <tr>
                     <th>Angkatan</th>
-                    <td>2022</td>
+                    <td><?php echo $data['angkatan'] ?></td>
                   </tr>
                   <tr>
                     <th>Jenis Kelamin</th>
-                    <td>Laki-Laki</td>
+                    <td><?php echo $data['jenis_kelamin'] ?></td>
                   </tr>
                 </tbody>
               </table>

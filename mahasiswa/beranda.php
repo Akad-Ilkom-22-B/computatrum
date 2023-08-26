@@ -22,6 +22,13 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   </head>
   <body>
+
+  <?php
+        $id_user = $_SESSION['id'];
+        $query = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE id='$id_user'");
+        $data = mysqli_fetch_array($query);
+        ?>
+
     <div class="container">
       <div class="header-section">
         <div class="nav-kanan">
@@ -33,7 +40,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
               <i class="fa fa-bell" aria-hidden="true"></i>
             </a>
           </div>
-          <div class="name-profil"><p>JUNG JAEHYUN</p></div>
+          <div class="name-profil"><p><?php echo $data['nama']  ?></p></div>
         </div>
       </div>
 
@@ -138,11 +145,11 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
       <div class="main-section">
         <div class="icon"></div>
         <div class="header">
-          <h1>Selamat Malam, JUNG JAEHYUN</h1>
+          <h1>Selamat Datang, <?php echo $data['nama'] ?></h1>
           <h6>Sistem Informasi Akademik Computatrum</h6>
         </div>
         <div class="container">
-          <div class="contain"><img src="https://i.postimg.cc/2yhCnDBy/gambarjaehyun.jpg" alt="pasfoto Mahasiswa"</div>
+          <div class="contain"><img src="https://i.postimg.cc/2yhCnDBy/gambarjaehyun.jpg" alt="pasfoto Mahasiswa"></div>
         </div>
         <div class="card">
           <div class="card-body">
@@ -151,15 +158,15 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
                 <tbody>
                   <tr>
                     <th>Tahun Akademik</th>
-                    <td>2023/2024 Ganjil</td>
+                    <td><?php echo $data['tahun_akademik'] ?></td>
                   </tr>
                   <tr>
                     <th>Semester</th>
-                    <td>3</td>
+                    <td><?php echo $data['semester'] ?></td>
                   </tr>
                   <tr>
                     <th>SKS</th>
-                    <td>44</td>
+                    <td><?php echo $data['sks'] ?></td>
                   </tr>
                 </tbody>
               </table>

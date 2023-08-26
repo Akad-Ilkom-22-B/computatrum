@@ -6,12 +6,11 @@ include "db/koneksi.php";
 
 $username = $_POST["username"];
 $password = $_POST["password"];
-$akses = $_POST["akses"];
 
 if(isset($_POST['masuk'])){
 
     $query = mysqli_query($koneksi, "SELECT * FROM login WHERE username = '$username' AND password = '$password'");
-    $data = mysqli_fetch_assoc($query);
+    $data = mysqli_fetch_array($query);
     $countdata = mysqli_num_rows($query);
 
     if($countdata > 0){
