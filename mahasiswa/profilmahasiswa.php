@@ -150,7 +150,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
 
         <div class="card">
           <div class="card-body">
-            <div class="contain"><img src="https://i.postimg.cc/2yhCnDBy/gambarjaehyun.jpg" alt="pasfoto Mahasiswa"</div>
+            <div class="contain"><img src="../admin/image/<?php echo $data['foto']?>" alt="pasfoto Mahasiswa"></div>
             <div class="table wrapper">
               <table>
                 <tbody>
