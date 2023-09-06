@@ -24,7 +24,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
 
 <div class="registrasi">
     <div class="login">
-<form action="" method = "post">
+<form action="" method = "post" enctype = "multipart/form-data">
     <table>
         <tr>
             <td>Username</td>
@@ -117,6 +117,12 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
             <td>SKS</td>
             <td><input type="text" name= "sks"></td>
         </tr>
+
+        <tr>
+        <td>FOTO</td>
+        <td><input type="file" name = "gambar"></td>
+    </tr>
+
 </table></div>
 <div class="tombol">
     <table>
@@ -135,10 +141,6 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
 
 <?php
 
-session_start();
-
-include '../db/koneksi.php';
-
 $username = isset($_POST['username']) ? $_POST['username'] : '';
 $Password = isset($_POST['pass']) ? $_POST['pass'] : '';
 $Akses = isset($_POST['akses']) ? $_POST['akses'] : '';
@@ -153,30 +155,27 @@ $semester = isset($_POST['semester']) ? $_POST['semester'] : '';
 $ipk = isset($_POST['ipk']) ? $_POST['ipk'] : '';
 $sks = isset($_POST['sks']) ? $_POST['sks'] : '';
 
-
-// $username = $_POST['username'];
-// $Password = $_POST['pass'];
-// $Akses = $_POST['akses'];
-// $nim = $_POST['nim'];
-// $nama = $_POST['nama'];
-// $jurusan = $_POST['jurusan'];
-// $prodi = $_POST['prodi'];
-// $angkatan = $_POST['angkatan'];
-// $jk = $_POST['jk'];
-// $tahun = $_POST['tahun'];
-// $semester = $_POST['semester'];
-// $ipk = $_POST['ipk'];
-// $sks = $_POST['sks'];
-
-
 if(isset($_POST['simpan'])){
+
+    $file = $_FILES['gambar']['name'];
+    $path = $_FILES['gambar']['tmp_name'];
+    $upload_directory = 'image/' .$file;
+
     $query_login = "insert into login(username, password, akses)
     values('$username', '$Password','$Akses')";
 
     $query_mahasiswa =  "insert into mahasiswa(nim, nama, jurusan, program_studi, angkatan, jenis_kelamin, tahun_akademik, semester, ipk, sks)
     values('$nim', '$nama','$jurusan','$prodi','$angkatan','$jk','$tahun','$semester','$ipk','$sks')";
 
-    if(mysqli_query($koneksi, $query_login) && mysqli_query($koneksi, $query_mahasiswa)) {
+    if (move_uploaded_file($path, $upload_directory)) {
+
+        $query_foto = "insert into foto(nim, foto) values('$nim', '$file')";
+
+    } else {
+        echo "Gagal mengupload foto.";
+    }
+
+    if(mysqli_query($koneksi, $query_login) && mysqli_query($koneksi, $query_mahasiswa) && mysqli_query($koneksi, $query_foto) ) {
         echo "Data berhasil disimpan.";
     } else {
         echo "Terjadi kesalahan: " . mysqli_error($koneksi);
