@@ -47,10 +47,9 @@ if(isset($_POST['save'])){
     $upload_directory = 'image/' .$file;
 
     if (move_uploaded_file($path, $upload_directory)) {
-        // File uploaded successfully; now insert into the database
-        $user_id = 1; // Replace with the actual user ID
 
-        // Assuming your database table has a column 'user_id' to associate the image with a user
+        $user_id = 1;
+
         $query = mysqli_query($koneksi, "UPDATE mahasiswa set foto = '$file' where  id = '$user_id'");
 
         if ($query) {

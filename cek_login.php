@@ -3,7 +3,6 @@ session_start();
 
 include "db/koneksi.php";
 
-
 $username = $_POST["username"];
 $password = $_POST["password"];
 $akses = $_POST["akses"];
@@ -14,27 +13,28 @@ if(isset($_POST['masuk'])){
     $data = mysqli_fetch_array($query);
     $countdata = mysqli_num_rows($query);
 
-    $_SESSION['id'] = $data['id'];
+    if($countdata > 0){
+
+      $_SESSION['id'] = $data['id'];
       $_SESSION['username'] = $data['username'];
       $_SESSION['password'] = $data['password'];
       $_SESSION['akses'] = $data['akses'];
 
-
-    // if($countdata > 0){
-
       
-      if ($_SESSION['akses'] and  $akses  == 'Admin') {
+      if ($_SESSION['akses'] == 'Admin' &&  $akses  == 'Admin') {
         header("Location: admin/admin.php");
       }
 
-      elseif($_SESSION['akses'] and $akses == 'Mahasiswa'){
+      elseif($_SESSION['akses'] == 'Mahasiswa' && $akses == 'Mahasiswa'){
         header("Location: mahasiswa/beranda.php");
       }
       
-    }
-
-    else{
+      else{
         echo 'Gagal Login';
     }
-  // }
+      
+    }
+
+    
+  }
 ?>
