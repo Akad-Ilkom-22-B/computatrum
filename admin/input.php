@@ -169,7 +169,7 @@ if(isset($_POST['simpan'])){
 
     if (move_uploaded_file($path, $upload_directory)) {
 
-        $query_foto = "insert into foto(nim, foto) values('$nim', '$file')";
+        $query_foto = "insert into foto(nama, foto) values('$nama' , '$file')";
 
     } else {
         echo "Gagal mengupload foto.";
