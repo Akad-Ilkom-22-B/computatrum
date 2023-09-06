@@ -149,7 +149,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['password'])) {
           <h6>Sistem Informasi Akademik Computatrum</h6>
         </div>
         <div class="container">
-          <div class="contain"><img src="https://i.postimg.cc/2yhCnDBy/gambarjaehyun.jpg" alt="pasfoto Mahasiswa"></div>
+          <div class="contain"><img src="../admin/image/<?php echo $data['foto']?>" alt="pasfoto Mahasiswa"></div>
         </div>
         <div class="card">
           <div class="card-body">
